@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import birthdaySong from "../assets/song.mp3";
-import flags from "../assets/flags2.png";
+import flags from "../assets/flags.png";
 import Balloons from "./Balloons";
 import Cake from "./Cake";
 import Friends from "./Friends";
 
 interface BirthdayCardProps {
-  setCurrentState: React.Dispatch<React.SetStateAction<"initial" | "birthday">>;
+  setCurrentState: React.Dispatch<
+    React.SetStateAction<"initial" | "birthday" | "final_message">
+  >;
 }
 
 const instructions = [
@@ -56,6 +58,8 @@ const BirthdayCard: React.FC<BirthdayCardProps> = ({ setCurrentState }) => {
     } else if (instructionIndex === 5) {
       setHasFriends(true);
       setInstructionIndex(6);
+    } else {
+      setCurrentState("final_message");
     }
   };
 

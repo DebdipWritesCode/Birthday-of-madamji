@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 interface InitialCardProps {
-  setCurrentState: React.Dispatch<React.SetStateAction<"initial" | "birthday">>;
+  setCurrentState: React.Dispatch<
+    React.SetStateAction<"initial" | "birthday" | "final_message">
+  >;
 }
 
 const InitialCard: React.FC<InitialCardProps> = ({ setCurrentState }) => {
