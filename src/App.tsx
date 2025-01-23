@@ -1,9 +1,13 @@
+import Background from "./components/Background";
+import InitialCard from "./components/InitialCard";
 
 function App() {
-
   return (
-    <div className=""></div>
-  )
+    <div>
+      <Background />
+      <InitialCard />
+    </div>
+  );
 }
 
-export default App
+export default App;
