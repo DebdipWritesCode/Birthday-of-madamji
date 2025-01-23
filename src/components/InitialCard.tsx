@@ -1,20 +1,29 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const InitialCard = () => {
+interface InitialCardProps {
+  setCurrentState: React.Dispatch<React.SetStateAction<"initial" | "birthday">>;
+}
+
+const InitialCard: React.FC<InitialCardProps> = ({ setCurrentState }) => {
   const texts = [
     "Hey, it's your birthday, Yaeyyy!",
     "And I have made something special for you, I hope you'll like it, madamji :-)",
     "Do you wanna see it?",
     "What if I say please? 🥺",
     "Please 🥺🥺🥺",
+    "Here you go, madamji 🎉🎉",
   ];
 
   const [shownText, setShownText] = useState(texts[0]);
   const [shownTextIndex, setShownTextIndex] = useState(0);
 
   const handleYesClick = () => {
-    console.log("Yes clicked");
+    setShownTextIndex(5);
+    setShownText(texts[5]);
+    setTimeout(() => {
+      setCurrentState("birthday");
+    }, 3000);
   };
 
   const handleNoClick = () => {
