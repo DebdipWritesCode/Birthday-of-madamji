@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { honorific } from "../utils/honorific";
 
 const SecretMessage = () => {
   return (
@@ -17,7 +18,7 @@ const SecretMessage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 3 }}
           className="text-justify font-sans text-xl text-slate-600 leading-10 ">
-          First of all, a very, very happy birthday to you, madamji. I know I’ve
+          First of all, a very, very happy birthday to you, {honorific}. I know I’ve
           probably annoyed you countless times, but truthfully, those moments
           are some of the most cherished memories of my life. When I look at you
           now, I don’t think, “I wish I had found her sooner.” Instead, I

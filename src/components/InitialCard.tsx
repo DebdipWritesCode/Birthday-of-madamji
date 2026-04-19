@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { honorific } from "../utils/honorific";
 
 interface InitialCardProps {
   setCurrentState: React.Dispatch<
@@ -10,11 +11,11 @@ interface InitialCardProps {
 const InitialCard: React.FC<InitialCardProps> = ({ setCurrentState }) => {
   const texts = [
     "Hey, it's your birthday, Yaeyyy!",
-    "And I have made something special for you, I hope you'll like it, madamji :-)",
+    `And I have made something special for you, I hope you'll like it, ${honorific} :-)`,
     "Do you wanna see it?",
     "What if I say please? 🥺",
     "Please 🥺🥺🥺",
-    "Here you go, madamji 🎉🎉",
+    `Here you go, ${honorific} 🎉🎉`,
   ];
 
   const [shownText, setShownText] = useState(texts[0]);
